@@ -1,0 +1,28 @@
+/* Common: định dạng cho các phần cả 2 trang dùng chung */
+@use "./_Variables.scss";
+@use "./_Reset.scss";
+@use "./_Responsive.scss";
+
+body {
+  background-color: var(--primary-bg-color);
+}
+
+section {
+  margin-top: 15rem;
+}
+
+.navbar-nav i {
+  margin-bottom: 0.9rem;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  color: var(--text-mode-white);
+}
+
+footer {
+  background-color: var(--primary-bg-color);
+  color: var(--text-mode-white);
+}

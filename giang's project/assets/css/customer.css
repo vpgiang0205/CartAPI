@@ -1,0 +1,184 @@
+@charset "UTF-8";
+:root {
+  --primary-color: red;
+  --secondary-color: #141414;
+  --primary-bg-color:#141414;
+  --text-mode-white: white;
+  --text-mode-black: black;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+li, a, link, link:hover, a:hover {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+/* RESPONSIVE */
+/*  pc: width >= 1024px */
+/* tablet: 740<= width < 1024 */
+/* moblie: width < 740px */
+@media screen and (max-width: 739px) {
+  #landingpage .card {
+    margin: auto;
+    width: 7rem;
+    height: 7rem;
+  }
+  #landingpage .card h4 {
+    font-size: 16px;
+  }
+  #landingpage .card img {
+    margin: auto;
+    height: 7rem;
+  }
+}
+/* Common: định dạng cho các phần cả 2 trang dùng chung */
+body {
+  background-color: var(--primary-bg-color);
+}
+
+section {
+  margin-top: 15rem;
+}
+
+.navbar-nav i {
+  margin-bottom: 0.9rem;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  color: var(--text-mode-white);
+}
+
+footer {
+  background-color: var(--primary-bg-color);
+  color: var(--text-mode-white);
+}
+
+body {
+  background-image: url("https://cdn.i-scmp.com/sites/default/files/d8/images/2020/04/16/apple_new-iphone-se-black-camera-and-touch-id_04152020.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#banner {
+  height: 100vh;
+  padding: 3em;
+}
+
+.card {
+  background-color: var(--primary-bg-color);
+  color: var(--text-mode-white);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card:hover::after {
+  opacity: 50%;
+}
+.card::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-bg-color);
+  opacity: 0;
+  transition: all 0.2 ease;
+}
+
+.card__Overlay {
+  position: absolute;
+  padding: 3rem;
+  height: 100%;
+  width: 100%;
+  z-index: 12;
+  opacity: 0;
+  color: var(--text-mode-white);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__OverlayFooter {
+  transition: all 0.25s ease;
+  position: absolute;
+  bottom: 10px;
+}
+.card__OverlayFooter button {
+  padding: 15px 30px;
+}
+.card__OverlayHeader {
+  font-size: 150%;
+  text-align: center;
+}
+.card__OverlayBody {
+  position: absolute;
+  top: 20%;
+  transition: all 0.25s ease;
+}
+.card__Overlay:hover {
+  opacity: 1;
+}
+.card__Overlay:hover .card__OverlayBody {
+  transform: translateY(30px);
+}
+.card__Overlay:hover .card__OverlayFooter {
+  transform: translateY(-25px);
+}
+
+#cartModel .modal-content {
+  margin: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 20%;
+}/*# sourceMappingURL=customer.css.map */

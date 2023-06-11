@@ -1,0 +1,104 @@
+@use "../sass/components/_Common";
+
+body {
+    background-image: url("https://cdn.i-scmp.com/sites/default/files/d8/images/2020/04/16/apple_new-iphone-se-black-camera-and-touch-id_04152020.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+// Banner
+#banner {
+    height: 100vh;
+    padding: 3em;
+}
+
+// Product & Product Overlay
+.card {
+    background-color: var(--primary-bg-color);
+    color: var(--text-mode-white);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: scale(1.05);
+
+        &::after {
+            opacity: 50%;
+        }
+    }
+
+    &::after {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: var(--primary-bg-color);
+        opacity: 0;
+        transition: all 0.2 ease;
+    }
+}
+
+.card__Overlay {
+    position: absolute;
+    padding: 3rem;
+    height: 100%;
+    width: 100%;
+    z-index: 12;
+    opacity: 0;
+    color: var(--text-mode-white);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &Footer {
+        transition: all 0.25s ease;
+        position: absolute;
+        bottom: 10px;
+        button {
+            padding: 15px 30px;
+        }
+    }
+
+    &Header {
+        font-size: 150%;
+        text-align: center;
+    }
+
+    &Body {
+        position: absolute;
+        top: 20%;
+        transition: all 0.25s ease;
+    }
+
+    &:hover {
+        opacity: 1;
+
+        .card__Overlay {
+            &Body {
+                transform: translateY(30px);
+            }
+
+            &Footer {
+                transform: translateY(-25px);
+            }
+
+        }
+    }
+}
+
+// Cart
+#cartModel {
+    .modal-content {
+        margin: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 20%;
+    }
+}
